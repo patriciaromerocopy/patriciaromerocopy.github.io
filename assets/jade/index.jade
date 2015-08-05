@@ -1,0 +1,38 @@
+- var web = true
+- var modernizr = false
+- var jquery = false
+- var ga = false
+doctype html
+if web
+	include inc/web/ie-conditionals.jade
+else
+	html
+		head
+			meta(charset="utf-8")
+			title Page title
+			meta(name="description",content="")
+			meta(name="viewport",content="width=device-width, initial-scale=1, minimal-ui")
+			unless web
+				include inc/mobile/head.jade
+			link(rel="stylesheet",href="assets/css/main.css")
+			if modernizr
+				script(src="assets/js/vendor/modernizr-2.7.1.min.js")
+		body
+
+			//- Content goes here
+
+			if jquery
+				if web
+					script(src="assets/js/vendor/jquery-1.11.1.min.js")
+				else
+					script(src="assets/js/vendor/jquery-2.1.0.min.js")
+					script(src="assets/js/helper.js")
+
+			script(src="assets/js/plugins.js")
+			script(src="assets/js/main.js")
+
+			if ga
+				script (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-XXXXX-X');ga('send','pageview');
+				
+if web
+	| </html>

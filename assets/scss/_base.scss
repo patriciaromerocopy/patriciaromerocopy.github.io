@@ -1,0 +1,80 @@
+/* BASE THEME
+-------------------------- */
+// Colors
+$txtBase: #222;
+$bgBaseLight: #ccc;
+$bgBaseDark: darken($bgBaseLight,30%);
+
+// Text and colors
+html, button, input, select, textarea {
+    color: $txtBase;
+}
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+body {
+    font-family: Helvetica, Helvetica Neue, Arial;
+}
+a, a:visited {
+    color: $txtBase;
+    text-decoration: underline;
+}
+a:hover, a:focus {
+    color: darken($txtBase,10%);
+}
+a:active {
+    color: darken($txtBase,20%);
+}
+::-moz-selection {
+    background: $bgBaseLight;
+    text-shadow: none;
+}
+::selection {
+    background: $bgBaseLight;
+    text-shadow: none;
+}
+::-moz-selection:window-inactive {
+    background-color: $bgBaseLight;
+}
+::selection:window-inactive {
+    background-color: $bgBaseLight;
+}
+input[type="text"]::-moz-selection, input[type="password"]::-moz-selection, input[type="email"]::-moz-selection, textarea::-moz-selection {
+    background-color: $bgBaseLight;
+}
+input[type="text"]::selection, input[type="password"]::selection, input[type="email"]::selection, textarea::selection {
+    background-color: $bgBaseLight;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $bgBaseLight;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// Alignments
+audio, canvas, video {
+    vertical-align: middle;
+}
+img, svg {
+    vertical-align: top;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+
+// Other
+.oldbrowsers {
+    margin: 0.2em 0;
+    background: $bgBaseLight;
+    color: $txtBase;
+    padding: 0.2em 0;
+}

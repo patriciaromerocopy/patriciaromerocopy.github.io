@@ -1,0 +1,57 @@
+/* THEMES
+-------------------------- */
+@mixin theme($name, $color, $color-claro, $color-medio) {
+    .texto-#{$name}, .av-leyenda, .theme-#{$name} .texto-theme {
+        color: $color!important;
+    }
+    .theme-#{$name} {
+        .av-cabecera-principal, .av-cabecera-principal a, .avo-filtros .av-desplegable-click, .av-barra-cabecera, .av-barra-cabecera .icon-bubble, .av-barra-opciones .icon-add, .av-titular-seccion, .av-libro-porcentaje, .av-horario-tabla-row .hora {
+            color: $color;
+        }
+        .av-cabecera-principal-acciones > *, .av-cabecera-principal-acciones .av-tooltip-click {
+            border-color: $color;
+        }
+        .count-flexible:after {
+            border-top-color: $color;
+            border-bottom-color: $color;
+        }
+        .av-boton, button:not(.av-busqueda-boton), input[type="submit"], input[type="reset"], input[type="button"], .av-selector-opcion, .count-flexible, .av-boton:hover, button:not(.av-busqueda-boton):hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .av-progress-porcentaje {
+            background-color: $color;
+        }
+        .av-selector-opcion {
+            @if $name == agenda {
+                 background-color: $av-agenda-boton;
+            } @else {
+                 background-color: $color;
+            };
+        }
+        .av-boton:active, button:not(.av-busqueda-boton):active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+            background-color: darken($color, 10%);
+        }
+        .av-boton-izquierda {
+            background-color: $color-claro!important;
+            &:hover {
+                background-color: $color-claro!important;
+            }
+            &:active {
+                background-color: darken($color-claro, 10%)!important;
+            }
+        }
+        .av-boton-centro {
+            background-color: $color-medio!important;
+            &:hover {
+                background-color: $color-medio!important;
+            }
+            &:active {
+                background-color: darken($color-medio, 10%)!important;
+            }
+        }
+        .enlace-color {
+            color: $color;
+            text-decoration: underline;
+        }
+        .icon-mail .count .icon-bubble{
+            color: darken($av-deberes-boton-texto,5%);
+        }
+    }
+}

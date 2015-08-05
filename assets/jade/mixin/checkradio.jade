@@ -1,0 +1,7 @@
+mixin checkradio(args)
+	.bme-checkradio(class=attributes.class ? attributes.class : null)
+		input(id=args.id,type=args.type,name=args.name,checked=args.checked)
+		label(for=args.id)
+			if args.img
+				.bme-photo.bme-radius(style='background-image: url('+args.img+ ')')
+			!= args.label

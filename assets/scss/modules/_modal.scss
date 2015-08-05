@@ -1,0 +1,97 @@
+/* MODAL
+-------------------------- */
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	height: auto;
+	max-width: 80vw;
+	min-width: 33.33vw;
+	visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 99;
+}
+.modal-show {
+	visibility: visible;
+}
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.2);
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s;
+	z-index: 90;
+}
+.modal-show ~ .modal-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+// Effect 1: Fade in and scale up
+.modal-effect-1 .modal-content {
+	transform: scale(.7);
+	opacity: 0;
+	transition: all .3s;
+}
+
+.modal-show.modal-effect-1 .modal-content {
+	transform: scale(1);
+	opacity: 1;
+}
+
+// Effect 2: Slide from the bottom
+.modal-effect-2 .modal-content {
+	transform: translateY(20%);
+	opacity: 0;
+	transition: all .3s;
+}
+
+.modal-show.modal-effect-2 .modal-content {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+// Effect 3:  Slide and stick to top
+.modal-effect-3{
+	top: 0;
+	transform: translateX(-50%);
+}
+
+.modal-effect-3 .modal-content {
+	transform: translateY(-200%);
+	transition: all .3s;
+	opacity: 0;
+}
+
+.modal-show.modal-effect-3 .modal-content {
+	transform: translateY(0%);
+	border-radius: 0 0 3px 3px;
+	opacity: 1;
+}
+
+// Effect 4:  Just me
+.modal-effect-4 .modal-content {
+	transform: scale(.8);
+	opacity: 0;
+	transition: all .3s;
+}
+
+.modal-show.modal-effect-4 ~ .modal-overlay {
+	background: $bgBaseLight;
+} 
+
+.modal-effect-4 .modal-content > *,
+.modal-effect-4 .modal-content {
+	background: transparent;
+}
+
+.modal-show.modal-effect-4 .modal-content {
+	transform: scale(1);
+	opacity: 1;
+}
